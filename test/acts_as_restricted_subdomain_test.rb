@@ -94,9 +94,9 @@ class ThingTest < ActsAsRestrictedSubdomainBaseTest
     assert_equal true, Thing.restricted_to_subdomain?
   end
   
-  def validates_presence_of_agency
+  def test_validates_presence_of_agency
     Agency.current = nil
-    thing = Thing.create!
+    thing = Thing.create
     assert_equal thing.errors.size, 1
   end
   
